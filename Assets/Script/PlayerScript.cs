@@ -38,6 +38,7 @@ public class PlayerScript : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            _animator.SetInteger("Status", 3);
             _rb.AddForce(new Vector3(0, jumpStrength, 0), ForceMode2D.Impulse);
         }
     }
