@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -8,10 +9,13 @@ public class PlayerScript : MonoBehaviour
     public float jumpStrength;
     private Rigidbody2D _rb;
     private Animator _animator;
+
+    public static GameObject player;
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        player =GameObject.Find("player"); //ten trong ui chu khong phai goi tag
     }
 
     // Update is called once per frame
@@ -41,5 +45,9 @@ public class PlayerScript : MonoBehaviour
             _animator.SetInteger("Status", 3);
             _rb.AddForce(new Vector3(0, jumpStrength, 0), ForceMode2D.Impulse);
         }
+    }
+    public static void PlayerDeath()
+    {
+        player.transform.position = new Vector3(2f,-2f, 0);
     }
 }
