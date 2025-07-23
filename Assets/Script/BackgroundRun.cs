@@ -13,6 +13,7 @@ public class BackgroundRun : MonoBehaviour
     void Update()
     {
         transform.position = PlayerScript.player.transform.position;
-      //  _spriteRenderer.material.mainTextureOffset = new Vector2(Time.time * 0.2f, 0);
+        //nho chinh thuoc tinh anh wrap mode=repeat
+     _spriteRenderer.material.mainTextureOffset = new Vector2(Time.time * 0.2f, 0);
     }
 }

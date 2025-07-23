@@ -29,6 +29,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            // ?? b? destroy, kh?ng l?m g?
+            return;
+        }
         if (Input.GetKey(KeyCode.A))
         {
 
